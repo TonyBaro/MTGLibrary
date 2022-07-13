@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="page" style="width:100vw; height:100vh; display: flex; flex-direction: column; align-items: center;">
+        <div class="header" style="display: flex; width:80%; align-items: center; justify-content: space-between;">
+            <p>Welcome {{user.first_name}} {{user.last_name}}</p>
+            <a href="/log_out">Log OUT</a>
+        </div>
+        <div class="body" style="width:80%; display:flex; flex-direction:column ;">
+            <div class="topbox" style=" display:flex; align-items:center; justify-content:center; "><h1>Your Cards</h1></div>
+            <div class="under" style="width:100%; display: flex;">
+                <div class="leftbox" style="width:50%; background-color: chocolate;">
+                    <p>Current Cards</p>
+
+                </div>
+                <div class="rightbox" style="width:50% ; background-color:chartreuse; display: flex; align-items: center; justify-content: center;">
+                    <a href="/new_card"><button>Add Card</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
