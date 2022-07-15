@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="page" style="width:100vw ; height: 100vh; display: flex; flex-direction: column;">
-        <div class="head" style="width:100%; display:flex ; align-items:center; justify-content: center;"><h1>NEW CARD</h1></div>
+        <div class="head" style="width:100%; display:flex ; align-items:center; justify-content: center;"><h1>NEW CARD {{user.first_name}}{{user.id}}</h1></div>
         <div class="body">
             <form action="/add_card" method="post" style="display:flex; width: 80%;">
                 <div class="left" style="display:flex ; flex-direction:column">
@@ -27,7 +27,7 @@
                     <textarea name="flavor" cols="30" rows="10"></textarea>
                     <div>
                         <label for="power">POWER:</label>
-                        <input type="number" name="number">
+                        <input type="number" name="power">
                         <label for="toughness">TOUGHNESS:</label>
                         <input type="number" name="toughness">
                     </div>

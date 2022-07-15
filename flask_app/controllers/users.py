@@ -1,8 +1,10 @@
+
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 from flask_app.models.user import User
+from flask_app.models.card import Card
 
 @app.route('/')
 def index():
@@ -50,7 +52,8 @@ def dashboard():
         'id' : session['user_id']
     }
     user = User.get_user_by_id(data)
-    return render_template('dashboard.html', user = user)
+    cards = Card.get_all_cards(data)
+    return render_template('dashboard.html', user = user, cards = cards)
 
 @app.route('/log_out')
 def log_out():

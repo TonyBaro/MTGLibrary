@@ -48,6 +48,8 @@ class User:
     def log_in(cls,data):
         query="SELECT * FROM users WHERE email = %(email)s"
         results = connectToMySQL('mtg_library').query_db( query, data )
+        if len(results) < 1:
+            return False
         return cls(results[0])
         
     @classmethod

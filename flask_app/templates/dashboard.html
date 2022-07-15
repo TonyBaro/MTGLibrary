@@ -17,6 +17,9 @@
             <div class="under" style="width:100%; display: flex;">
                 <div class="leftbox" style="width:50%; background-color: chocolate;">
                     <p>Current Cards</p>
+                    {% for card in cards %}
+                    <p>Name:{{card.name}} TYPE:{{card.type}}
+                    {% endfor %}
 
                 </div>
                 <div class="rightbox" style="width:50% ; background-color:chartreuse; display: flex; align-items: center; justify-content: center;">
