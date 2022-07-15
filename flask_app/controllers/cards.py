@@ -26,3 +26,14 @@ def add_card():
     Card.add_card(data)
     return redirect('/dashboard')
 
+@app.route('/view_card/<num>')
+def view_card(num):
+    data = {
+        'num':num,
+        'id':session['user_id']
+    }
+    card = Card.get_card(data)
+    user = User.get_user_by_id(data)
+    return render_template ('view_card.html' , card = card, user = user)
+
+

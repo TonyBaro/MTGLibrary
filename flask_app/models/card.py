@@ -37,3 +37,9 @@ class Card:
             all_cards.append(cls(c))
         return all_cards
 
+    @classmethod
+    def get_card(cls,data):
+        query = "SELECT * FROM cards WHERE cards.id = %(num)s"
+        results = connectToMySQL ('mtg_library').query_db(query, data)
+        return results[0]
+

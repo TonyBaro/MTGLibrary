@@ -18,7 +18,10 @@
                 <div class="leftbox" style="width:50%; background-color: chocolate;">
                     <p>Current Cards</p>
                     {% for card in cards %}
-                    <p>Name:{{card.name}} TYPE:{{card.type}}
+                    <div class="card" style="display:flex">
+                        <p>Name:{{card.name}} TYPE:{{card.type}}</p>
+                        <a href="/view_card/{{card.id}}"> VIEW </a>
+                    </div>
                     {% endfor %}
 
                 </div>

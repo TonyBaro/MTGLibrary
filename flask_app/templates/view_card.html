@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="page" style="width:100vw ; height: 100vh; display: flex; flex-direction: column;">
+        <div class="head" style="width:100%; display:flex ; align-items:center; justify-content: center;"><h1>Welcome {{user.first_name}}</h1></div>
+        <div class="body">
+            <form action="/add_card" method="post" style="display:flex; width: 80%;">
+                <div class="left" style="display:flex ; flex-direction:column">
+                    <label for="name">NAME:</label>
+                    <p>"{{card.name}}"</p>
+                    <label for="cost">COST:</label>
+                    <p>"{{card.cost}}"</p>
+                    <label for="type">TYPE:</label>
+                    <p>"{{card.type}}"</p>
+                    <label for="keywords">KEYWORDS:</label>
+                    <p>"{{card.keywords}}"</p>
+                </div>
+                <div class="right" style="display:flex ; flex-direction:column">
+                    <label for="flavor_text">FLAVOR:</label>
+                    <p>{{card.flavor}}</p>
+                    <div>
+                        <label for="power">POWER:</label>
+                        <p>"{{card.power}}"</p>
+                        <label for="toughness">TOUGHNESS:</label>
+                        <p>"{{card.toughness}}"</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
