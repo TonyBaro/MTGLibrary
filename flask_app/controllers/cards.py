@@ -36,4 +36,36 @@ def view_card(num):
     user = User.get_user_by_id(data)
     return render_template ('view_card.html' , card = card, user = user)
 
+@app.route('/edit_card/<num>')
+def edit_card(num):
+    data = {
+        'num':num,
+        'id':session['user_id']
+    }
+    card = Card.get_card(data)
+    user = User.get_user_by_id(data)
+    return render_template ('edit_card.html', card = card, user = user)
+
+@app.route('/update_card', methods = ["POST"])
+def update_card():
+    data = {
+        'id':request.form['id'],
+        'name':request.form['name'],
+        'cost':request.form['cost'],
+        'type':request.form['type'],
+        'keywords':request.form['keywords'],
+        'flavor':request.form['flavor'],
+        'power':request.form['power'],
+        'toughness':request.form['toughness'],
+    }
+    Card.update_card(data)
+    return redirect ('/dashboard')
+
+@app.route('/delete_card/<num>')
+def delete_card(num):
+    data = {
+        'num':num
+    }
+    Card.delete_card(data)
+    return redirect ('/dashboard')
 

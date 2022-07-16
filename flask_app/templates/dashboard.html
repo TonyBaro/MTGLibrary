@@ -21,6 +21,8 @@
                     <div class="card" style="display:flex">
                         <p>Name:{{card.name}} TYPE:{{card.type}}</p>
                         <a href="/view_card/{{card.id}}"> VIEW </a>
+                        <a href="/edit_card/{{card.id}}">EDIT</a>
+                        <a href="/delete_card/{{card.id}}">DELETE</a>
                     </div>
                     {% endfor %}
 
