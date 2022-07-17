@@ -4,36 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NEW CARD</title>
+    <link rel="stylesheet" href= "{{url_for('static',filename='dashboardstyle.css')}}">
 </head>
 <body>
-    <div class="page" style="width:100vw ; height: 100vh; display: flex; flex-direction: column;">
-        <div class="head" style="width:100%; display:flex ; align-items:center; justify-content: center;"><h1>NEW CARD {{user.first_name}}{{user.id}}</h1></div>
+    <div class="page">
+        <div class="header" >
+            <h1>NEW CARD {{user.first_name}}</h1>
+            <a href="/dashboard">DASHBOARD</a>
+        </div>
         <div class="body">
-            <form action="/add_card" method="post" style="display:flex; width: 80%;">
-                <div class="left" style="display:flex ; flex-direction:column">
-                    <input type="hidden" name="user" value="{{user.id}}">
-                    <label for="name">NAME:</label>
-                    <input type="text" name="name">
-                    <label for="cost">COST:</label>
-                    <input type="text" name="cost">
-                    <label for="type">TYPE:</label>
-                    <input type="text" name="type">
-                    <label for="keywords">KEYWORDS:</label>
-                    <input type="text" name="keywords">
-                </div>
-                <div class="right" style="display:flex ; flex-direction:column">
-                    <label for="flavor_text">FLAVOR:</label>
-                    <textarea name="flavor" cols="30" rows="10"></textarea>
-                    <div>
-                        <label for="power">POWER:</label>
-                        <input type="number" name="power" value="0">
-                        <label for="toughness">TOUGHNESS:</label>
-                        <input type="number" name="toughness" value="0">
+            <div class="under">
+                <form action="/add_card" method="post" style="display:flex; width: 100%;">
+                    <div class="leftbox" style="display:flex ; flex-direction:column">
+                        <input type="hidden" name="user" value="{{user.id}}">
+                        <label for="name">NAME:</label>
+                        <input type="text" name="name">
+                        <label for="cost">COST:</label>
+                        <input type="text" name="cost">
+                        <label for="type">TYPE:</label>
+                        <input type="text" name="type">
+                        <label for="keywords">KEYWORDS:</label>
+                        <input type="text" name="keywords">
                     </div>
-                    <button>ADD CARD</button>
-                </div>
-            </form>
+                    <div class="rightbox" style="display:flex ; flex-direction:column">
+                        <label for="flavor_text">FLAVOR:</label>
+                        <textarea name="flavor" cols="80" rows="5"></textarea>
+                        <div>
+                            <label for="power">POWER:</label>
+                            <input type="number" name="power" value="0">
+                            <label for="toughness">TOUGHNESS:</label>
+                            <input type="number" name="toughness" value="0">
+                        </div>
+                        <button id="addCard">ADD CARD</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     
