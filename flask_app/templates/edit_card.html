@@ -36,12 +36,12 @@
                             <label for="toughness">TOUGHNESS:</label>
                             <input type="number" name="toughness" value="{{card.toughness}}">
                         </div>
-                        <button id="addCard">UPDATE CARD</button>
+                        <button id="addCard" onmouseover="buttonSelect(this)" onmouseleave="buttonDeselect(this)">UPDATE CARD</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
+    <script src="{{url_for('static',filename='script.js')}}"></script>
 </body>
 </html>
